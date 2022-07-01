@@ -1,13 +1,10 @@
 package Servicios;
-public class Servicio{
-    private Cliente cliente;
+public class Servicio {
+    //private Cliente cliente;
     protected String ciudad;
     protected double valorPagar;
     protected double puntuacion;
     protected String idServicio;
-    private Hospedaje hospedaje;
-    private Transporte transporte;
-    private Entretenimiento entretenimiento;
 
     public void mostrarReserva(){
         //next
