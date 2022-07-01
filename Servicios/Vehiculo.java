@@ -6,7 +6,7 @@ public class Vehiculo{
     private String placa;
     private String color;
     private int capacidad;
-    private Disponibilidad estado;
+    // private Disponibilidad estado;
     private double alquilerXdia;
     private TipoConduccion tipo;
     public static int transportesReservados;
