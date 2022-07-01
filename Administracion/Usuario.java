@@ -2,8 +2,14 @@ package Administracion;
 
 public class Usuario{
   
-  public String cedula;
-  
+  protected String cedula;
+  protected String nombre;
+  protected String apellido;
+  protected String user;
+  protected String contrasenia;
+  protected String celular;
+  protected int edad;
 
+  
   
 }
