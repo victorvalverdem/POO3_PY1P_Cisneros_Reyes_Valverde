@@ -1,6 +1,6 @@
 package Administracion;
 
-public class Usuario{
+public abstract class Usuario{
   
   protected String cedula;
   protected String nombre;
@@ -21,8 +21,58 @@ public class Usuario{
     this.edad = edad;
   }
 
+  // GETTERS Y SETTERS
+  public String getCedula(){
+    return this.cedula;
+  }
+  public void setCedula(String cedula){
+    this.cedula = cedula;
+  }
 
-  //public abstract void consultarReservas();
-  
+  public String getNombre(){
+    return this.nombre;
+  }
+  public void setNombre(String nombre){
+    this.nombre = nombre;
+  }
+
+  public String getApellido(){
+    return this.apellido;
+  }
+  public void setApellido(String apellido){
+    this.apellido = apellido;
+  }
+
+  public String getUser(){
+    return this.user;
+  }
+  public void setUser(String user){
+    this.user = user;
+  }
+
+  public String getcontrasenia(){
+    return this.contrasenia;
+  }
+  public void setContrasenia(String contrasenia){
+    this.contrasenia = contrasenia;
+  }
+
+  public String getCelular(){
+    return this.celular;
+  }
+  public void setCelular(String celular){
+    this.celular = celular;
+  }
+
+  public int getEdad(){
+    return this.edad;
+  }
+  public void setEdad(int edad){
+    this.edad = edad;
+  }
+
+
+  public abstract void consultarReservas();
+
   
 }
