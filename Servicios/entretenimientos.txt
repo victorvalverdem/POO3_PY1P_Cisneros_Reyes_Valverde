@@ -1,0 +1,3 @@
+idEntretenimiento-nombrePaquete-ciudad-descripcionPaquete-diasRecorrido
+101-Viaje a la mitad del mundo-Quito-Recorrido por todos los monumentos mitad del mundo-Lunes, martes
+102-Recorrido Bosque Protector Espol-Guayaquil-Vamos a conocer fauna y flora del Bosque Espol-Lunes

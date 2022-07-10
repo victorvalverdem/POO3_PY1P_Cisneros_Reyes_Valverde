@@ -1,4 +1,4 @@
-package Servicios;
+package Hospedajes;
 
 public enum TipoHabitacion{
 

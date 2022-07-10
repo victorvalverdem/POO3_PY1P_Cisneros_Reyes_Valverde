@@ -1,4 +1,4 @@
-package Servicios;
+package Hospedajes;
 import java.util.ArrayList;
 
 public class Hotel extends Hospedaje{

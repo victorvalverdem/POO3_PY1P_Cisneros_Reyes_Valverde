@@ -1,7 +1,7 @@
-package Servicios;
+package Hospedajes;
 import java.util.Date;
 import java.util.ArrayList;
-import Servicios.Hotel;
+import Hospedajes.Hotel;
 
 public class Hospedaje extends Servicio {
     protected Date fechaEntrada;
@@ -11,6 +11,7 @@ public class Hospedaje extends Servicio {
     public static ArrayList<Hotel> generarHoteles(){
         //1. LEEMOS EL ARCHIVO HOTEL y lo guardamos en ArrayList que almacena String
         ArrayList<String> lineasHoteles = new ArrayList<String>(); //= LO QUE RETORNA EL ARCHIVO DE LECTURA
+        //Revisar si clases de lectura contienen como quitar el encabezado
         lineasHoteles.add("Ecuador");
 
         ArrayList<Hotel> hoteles = new ArrayList<Hotel>();
@@ -40,10 +41,8 @@ public class Hospedaje extends Servicio {
 
 
         //GENERAR AHORA LAS HABITACIONES, PARA LLENAR LOS OBJETOS HOTELES Y GENERAR LOS HOTELES LLENOS
-            ArrayList<String> lineasHabitaciones = new ArrayList<String>(); //= LO QUE RETORNA EL ARCHIVO DE LECTURA DE HABITACIONES
+        ArrayList<String> lineasHabitaciones = new ArrayList<String>(); //= LO QUE RETORNA EL ARCHIVO DE LECTURA DE HABITACIONES
         lineasHabitaciones.add("Ecuador"); //Cambiar una vez implementado clase lectora
-
-        ArrayList<Habitacion> habitaciones = new ArrayList<Habitacion>();
         
         for(String lineaHabitacion: lineasHabitaciones){
             String[] elementos = lineaHabitacion.split(",");
@@ -63,13 +62,23 @@ public class Hospedaje extends Servicio {
             h.setNumHabitacion(numero);
             h.setEstado(estado);
 
-            for(Hotel hotel:hoteles){
-                if(hotel.getIdHotel().equals(h.getCodigo())){
-                    hotel.getHabitaciones().add(h);
-                }
-            }
+            boolean seguirBuscando=true;
+
             
+            int i = 0;
+            while(i<hoteles.size() && seguirBuscando){
+                if(hoteles.get(i).getIdHotel().equals(h.getCodigo())){
+                    hoteles.get(i).getHabitaciones().add(h);
+                    seguirBuscando = false;                   
+                }
+                i++;
+            }
+        }      
         return hoteles;          
+        
+    }
+
+    public static ArrayList<Departamento> generarDepartamentos(){
         
     }
 }
