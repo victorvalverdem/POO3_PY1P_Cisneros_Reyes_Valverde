@@ -21,5 +21,9 @@ public class Servicio {
     public void mostrarReserva(Entretenimiento e){
         //next
     }
+
+    public void setPuntuacion(int puntuacion){
+        this.puntuacion = puntuacion;
+    }
     
 }

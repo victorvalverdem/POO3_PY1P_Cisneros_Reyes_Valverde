@@ -3,6 +3,7 @@ package Servicios;
 public class Habitacion{
 
 
+  private String codigo;
   private TipoHabitacion tipo;
   private double precio;
   private int capacidad;
@@ -45,6 +46,14 @@ public class Habitacion{
   public void setEstado(boolean estado){
     this.estado = estado;
   }
+
+    public void setCodigo(String codigo){
+        this.codigo = codigo;
+    }
+
+    public String getCodigo(){
+        return this.codigo;
+    }
   
   
   

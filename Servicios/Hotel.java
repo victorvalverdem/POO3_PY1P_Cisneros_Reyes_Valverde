@@ -1,7 +1,7 @@
 package Servicios;
 import java.util.ArrayList;
 
-public class Hotel{
+public class Hotel extends Hospedaje{
 
   private ArrayList<Habitacion> habitaciones;
   private String idHotel;
@@ -11,12 +11,14 @@ public class Hotel{
   private boolean inParqueo; 
   private boolean inCancelFree;
 
-
+    public Hotel(){
+        //this.habitaciones = new ArrayList<Habitacion>();
+    }
   // GETTERS Y SETTERS
   public ArrayList<Habitacion> getHabitaciones(){
     return this.habitaciones;
   }
-  public void setHabitaciones(ArrayList<Habitaciones> habitaciones){
+  public void setHabitaciones(ArrayList<Habitacion> habitaciones){
     this.habitaciones = habitaciones;
   }
 
@@ -51,16 +53,26 @@ public class Hotel{
   public boolean getInParqueo(){
     return this.inParqueo;
   }
-  public void setInDesayuno(boolean inParqueo){
+  public void setInParqueo(boolean inParqueo){
     this.inParqueo = inParqueo;
   }
 
   public boolean getInCancelFree(){
     return this.inCancelFree;
   }
-  public void setInDesayuno(boolean inCancelFree){
+  public void setInCancelFree(boolean inCancelFree){
     this.inCancelFree = inCancelFree;
   }
 
+    public String toString(){
+        String desayuno, parqueo, cancelar;
+        if(this.inDesayuno){desayuno = "Si";}else{desayuno = "No";}
+        if(this.inParqueo){parqueo="Si";}else{parqueo="No";}
+        if(this.inCancelFree){cancelar="Si";}else{cancelar="No";}
+        
+        return "Dirección: " + this.direccion + "\nCosto por noche: "+ /*Costo por noche*/""+"\nEstrellas: "+this.puntuacion+"\nIncluye desayuno: " + desayuno + "\nIncluye parqueo: "+parqueo+"\nPermite cancelacion gratis: "+ cancelar;
+    }
+
+    
 
 }
