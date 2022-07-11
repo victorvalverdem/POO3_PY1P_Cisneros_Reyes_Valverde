@@ -27,5 +27,24 @@ public class Entretenimiento{
     public String getDiasRecorrido(){
         return this.diasRecorrido;
     }
-    
+
+    public void setIdEntretenimiento(String id){
+        this.idEntretenimiento = id;
+    }
+
+    public void setNombrePaquete(String nombre){
+        this.nombrePaquete = nombre;
+    }
+
+    public void setCiudad(String city){
+        this.ciudad = city;
+    }
+
+    public void setDescripcion(String des){
+        this.descripcionPaquete = des;
+    }
+
+    public void setDiasRecorrido(String days){
+        this.diasRecorrido = days;
+    }
 }
