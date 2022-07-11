@@ -1,8 +1,10 @@
 package Administracion;
+import java.util.Scanner;
 import java.util.ArrayList;
 import Hospedajes.*;
 import Servicios.*;
 import manejoArchivos.ManejoArchivos;
+
 
 public class Cliente extends Usuario{
 
@@ -183,33 +185,98 @@ public class Cliente extends Usuario{
     ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
     for(String lineaUsuario: lineasUsuarios){
-            String[] elementos = lineaHotel.split(",");
-            
-            String codigoHotel = elementos[0];
-            String nombre = elementos[1];
-            int rating = Integer.parseInt(elementos[2]);
-            String direccion = elementos[3];
-            Boolean desayuno = Boolean.parseBoolean(elementos[4]);
-            Boolean parqueo = Boolean.parseBoolean(elementos[5]);
-            Boolean cancelacion = Boolean.parseBoolean(elementos[6]);
+          try{
+              String[] elementos = lineaHotel.split(",");
+              
+              String cedula = elementos[0];
+              String nombre = elementos[1];
+              String apellido = elementos[2];
+              String user = elementos[3];
+              String contrasenia = elementos[4];
+              String celular = elementos[5];
+              TipoCliente tipo = TipoCliente.valueOf(elementos[6]);
+  
+              Usuario cliente = new Usuario();
+              cliente.setCedula(cedula);
+              cliente.setNombre(nombre);
+              cliente.setApellido(apellido);
+              cliente.setUser(user);
+              cliente.setContrasenia(contrasenia);
+              cliente.setCelular(celular);
+              cliente.setTipo(tipo);
+  
+              usuarios.add(cliente);
+            }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
 
+
+  }
+  return usuarios;
+}
+
+  public void mostrarSistema(){
+    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+    System.out.println("  ");
+    System.out.println("  ");
+    System.out.println("          BIENVENIDO AL SISTEMA          ");
+    System.out.println("  ");
+    System.out.println("  ");
+    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+    System.out.println("  ");
+    System.out.println("  ");
+  }
+  
+  public void validarDatos(){
+
+    mostrarSistema();
+    ArrayList<Usuario> usuarios = generarUsuarios();
+    Scanner sc = new Scanner(System.in);
+    System.out.println("USER: ");
+    String userIn = sc.nextLine();
+    System.out.println("CONTRASEÑA: ");
+    String contraIn = sc.nextLine();
+
+    if(!validarUsuarioExistente(userIn,usuarios)){
+      System.out.prinln("Digite su cédula: ");
+      String cedula = sc.nextLine();
+      System.out.prinln("Digite su nombre: ");
+      String nom = sc.nextLine();
+      System.out.prinln("Digite su apellido: ");
+      String apell = sc.nextLine();
+      System.out.prinln("Digite su celular: ");
+      String cell = sc.nextLine();
+      System.out.prinln("Digite el tipo de cliente: ");
+      TipoCliente tip = sc.nextLine();
+      while(tip != "C" && tip!= "V"){
+        System.out.prinln("Digite el tipo de cliente correctamente: ");
+        TipoCliente tip = sc.nextLine();
+      }
+      System.out.prinln("Digite su edad: ");
+      int edad = sc.nextInt();
+      sc.nextLine();
+      System.out.prinln("Digite su Tarjeta de crédito: ");
+      String tarjetaC = sc.nextLine();
+      
+      Cliente u = new Cliente();
+      
 
       
+    }
+
+    
+
+}
+
+
+  public boolean validarUsuarioExistente(String userIn,ArrayList<Usuario> usuarios){
+    for(Usuario usuario:usuarios){
+      if (userIn == usuario.getUser()){
+        return true;
+      }
+    }
+    return false;
   }
 
-
-
-  
-  public boolean validarDatos(){
-
-  }
-  
-
-
-
-
-
-
-
-  
 }

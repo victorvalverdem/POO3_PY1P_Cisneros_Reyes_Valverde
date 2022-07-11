@@ -8,6 +8,7 @@ import Administracion.*;
 class Main {
   public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
+    
       System.out.println("+++++++ MENÚ +++++++\n1. Reservar Hospedaje\n2. Reservar transporte\n3. Reservar entretenimiento\n4. Pagar reserva\n5. Consultar reservas\n6. Salir\n");
 
       System.out.println("Elija una opción: ");
