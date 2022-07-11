@@ -1,5 +1,7 @@
 package Servicios;
 import java.util.ArrayList;
+import manejoArchivos.ManejoArchivos;
+
 public class Servicio {
     //private Cliente cliente;
     protected String ciudad;
@@ -28,7 +30,7 @@ public class Servicio {
     }
 
     public ArrayList<Vehiculo> generarVehiculos(){
-        ArrayList<String> lineasVehiculos //= lo que recibe de la funcion lectora
+        ArrayList<String> lineasVehiculos = ManejoArchivos.LeeFichero("vehiculos.txt");
         //2. Creacion de ArrayList que recibe los objetos de las clases pertinentes
         ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
         //3. Por cada elemento String del arrayList de String
@@ -66,7 +68,7 @@ public class Servicio {
     
     public ArrayList<Entretenimiento> generarPaquetes(){
         //1. ArrayList de String que recibe lo leido por la funcion lectora de archivos
-        ArrayList<String> lineasPaquetes //= lo que recibe de la funcion lectora
+        ArrayList<String> lineasPaquetes = ManejoArchivos.LeeFichero("entretenimientos.txt");
         //2. Creacion de ArrayList que recibe los objetos de las clases pertinentes
         ArrayList<Entretenimiento> paquetes = new ArrayList<Entretenimiento>();
         //3. Por cada elemento String del arrayList de String

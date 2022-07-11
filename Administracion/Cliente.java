@@ -2,6 +2,7 @@ package Administracion;
 import java.util.ArrayList;
 import Hospedajes.*;
 import Servicios.*;
+import manejoArchivos.ManejoArchivos;
 
 public class Cliente extends Usuario{
 
@@ -171,4 +172,44 @@ public class Cliente extends Usuario{
         //PROTOCOLO DE RESERVA
         
     }
+
+
+
+
+  private ArrayList<Usuario> generarUsuario(){
+    
+    ArrayList<String> lineasUsuarios = ManejoArchivos.LeeFichero("usuarios.txt"); 
+
+    ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+
+    for(String lineaUsuario: lineasUsuarios){
+            String[] elementos = lineaHotel.split(",");
+            
+            String codigoHotel = elementos[0];
+            String nombre = elementos[1];
+            int rating = Integer.parseInt(elementos[2]);
+            String direccion = elementos[3];
+            Boolean desayuno = Boolean.parseBoolean(elementos[4]);
+            Boolean parqueo = Boolean.parseBoolean(elementos[5]);
+            Boolean cancelacion = Boolean.parseBoolean(elementos[6]);
+
+
+      
+  }
+
+
+
+  
+  public boolean validarDatos(){
+
+  }
+  
+
+
+
+
+
+
+
+  
 }

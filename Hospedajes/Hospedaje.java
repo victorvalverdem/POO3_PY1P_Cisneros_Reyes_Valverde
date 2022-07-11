@@ -2,6 +2,8 @@ package Hospedajes;
 import java.util.Date;
 import java.util.ArrayList;
 import Hospedajes.Hotel;
+import manejoArchivos.ManejoArchivos;
+
 
 public class Hospedaje extends Servicio {
     protected Date fechaEntrada;
@@ -10,9 +12,8 @@ public class Hospedaje extends Servicio {
 
     public static ArrayList<Hotel> generarHoteles(){
         //1. LEEMOS EL ARCHIVO HOTEL y lo guardamos en ArrayList que almacena String
-        ArrayList<String> lineasHoteles = new ArrayList<String>(); //= LO QUE RETORNA EL ARCHIVO DE LECTURA
+        ArrayList<String> lineasHoteles = ManejoArchivos.LeeFichero("hoteles.txt"); //= LO QUE RETORNA EL ARCHIVO DE LECTURA
         //Revisar si clases de lectura contienen como quitar el encabezado
-        lineasHoteles.add("Ecuador");
 
         ArrayList<Hotel> hoteles = new ArrayList<Hotel>();
         
@@ -41,9 +42,9 @@ public class Hospedaje extends Servicio {
 
 
         //GENERAR AHORA LAS HABITACIONES, PARA LLENAR LOS OBJETOS HOTELES Y GENERAR LOS HOTELES LLENOS
-        ArrayList<String> lineasHabitaciones = new ArrayList<String>(); //= LO QUE RETORNA EL ARCHIVO DE LECTURA DE HABITACIONES
-        lineasHabitaciones.add("Ecuador"); //Cambiar una vez implementado clase lectora
-        
+        ArrayList<String> lineasHabitaciones = ManejoArchivos.LeeFichero("habitaciones.txt");  
+      //LO QUE RETORNA EL ARCHIVO DE LECTURA DE HABITACIONES
+      
         for(String lineaHabitacion: lineasHabitaciones){
             String[] elementos = lineaHabitacion.split(",");
             
@@ -79,6 +80,6 @@ public class Hospedaje extends Servicio {
     }
 
     public static ArrayList<Departamento> generarDepartamentos(){
-        
+      
     }
 }

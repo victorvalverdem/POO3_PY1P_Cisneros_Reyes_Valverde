@@ -54,7 +54,7 @@ public class Habitacion{
     public String getCodigo(){
         return this.codigo;
     }
-  
+
   
   
 }
